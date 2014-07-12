@@ -1,3 +1,11 @@
 name: 22vortex22-t3
 main: com.tenjava.entries._22vortex22.t3.TenJava
 version: v1.0.0
+author: Vortex
+description: My ten.java entry.
+commands:
+  Wand:
+   description: Gives you a powerful wand?
+   usage: /wand
+
+

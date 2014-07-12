@@ -26,7 +26,7 @@ public class Alexmack implements Listener
 	}
 	
 	@EventHandler
-	public void PlayerPreDogeCommandEvent(PlayerCommandPreprocessEvent e)
+	public void PlayerPreAlexCommandEvent(PlayerCommandPreprocessEvent e)
 	{
 		if(e.getMessage().equalsIgnoreCase("/alexmack"))
 		{
