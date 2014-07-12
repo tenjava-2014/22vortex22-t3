@@ -29,9 +29,10 @@ public class RespawnEvents implements Listener
 	};
 
 	/**
-	 * 
-	 * onRespawn currently plays a random visual effect a configarable amount of times when a player respawns.
+	 * Effects on respawn. Bad ass.
+	 * @param e
 	 */
+	 
 	@EventHandler
 	public void onRespawn(final PlayerRespawnEvent e)
 	{

@@ -17,8 +17,11 @@ public class Jkcclemens implements Listener
 	}
 	
 	/**
-	 * Easter Eggs are OP.
+	 * Easter eggs are op and this one is for Jkcclemens.
+	 * @param e
 	 */
+	 
+	 
 	
 	@EventHandler
 	public void PlayerPreJkcclemensCommandEvent(PlayerCommandPreprocessEvent e)

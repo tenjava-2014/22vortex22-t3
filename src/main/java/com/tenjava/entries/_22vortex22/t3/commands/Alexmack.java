@@ -12,11 +12,6 @@ import org.bukkit.potion.PotionEffectType;
 
 import com.tenjava.entries._22vortex22.t3.TenJava;
 
-/**
- * 
- * Another easter egg.
- */
-
 public class Alexmack implements Listener
 {
 	public TenJava plugin;
@@ -24,6 +19,11 @@ public class Alexmack implements Listener
 	{	
 		plugin = instance;
 	}
+	
+	/**
+	 * Easter egg for my first teacher Alex.
+	 * @param e
+	 */
 	
 	@EventHandler
 	public void PlayerPreAlexCommandEvent(PlayerCommandPreprocessEvent e)

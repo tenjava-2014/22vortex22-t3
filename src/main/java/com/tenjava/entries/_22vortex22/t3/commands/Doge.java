@@ -10,13 +10,6 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 import com.tenjava.entries._22vortex22.t3.TenJava;
 
-/**
- * 
- * This is mainly an easter egg.
- * Not part of the actually plugin idea.
- *
- */
-
 public class Doge implements Listener
 {
 	public TenJava plugin;
@@ -24,6 +17,7 @@ public class Doge implements Listener
 	{	
 		plugin = instance;
 	}
+	
 	
 	public Random random = new Random();
 	
@@ -51,7 +45,10 @@ public class Doge implements Listener
 				"doge such epik",
 				"420 much blaze",
 			};
-	
+	/**
+	 * Much easter egg, very event. Such lol.
+	 * @param e
+	 */
 	@EventHandler
 	public void PlayerPreDogeCommandEvent(PlayerCommandPreprocessEvent e)
 	{

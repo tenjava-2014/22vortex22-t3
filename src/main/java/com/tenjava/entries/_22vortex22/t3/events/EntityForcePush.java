@@ -3,7 +3,6 @@ package com.tenjava.entries._22vortex22.t3.events;
 import java.util.Arrays;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -11,8 +10,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityEvent;
-
 import com.tenjava.entries._22vortex22.t3.TenJava;
 
 public class EntityForcePush implements Listener
@@ -57,13 +54,13 @@ public class EntityForcePush implements Listener
 	
 	/**
 	 * When you left click mobs they get flung back with effects.
-	 * 
+	 * You have the force, young one.
+	 * @param event
 	 */
 	
 	@EventHandler
 	public void onWandHit(EntityDamageByEntityEvent event)
 	{
-		Bukkit.getServer().broadcastMessage("test");
 		Entity e = event.getEntity();
 		if(event.getDamager().getType().equals(EntityType.PLAYER))
 		 {
@@ -75,11 +72,11 @@ public class EntityForcePush implements Listener
 					  if(types.contains(e.getType()))
 						{
 						  e.setVelocity(event.getDamager().getLocation().getDirection().multiply(2.0).setY(1));
-						  p.sendMessage(ChatColor.GOLD + "You used the force on the " + e.getType() + ".");
+						  p.sendMessage(ChatColor.GOLD + "You used the force on the " + e.getType().toString().toLowerCase() + ".");
 						}
-					  else if(!(types.contains(e.getType())));
+					  else if(!(types.contains(e.getType())))
 						{
-						 p.sendMessage(ChatColor.RED + "You can't use the force on a " + e.getType() + ".");
+						 p.sendMessage(ChatColor.RED + "You can't use the force on a " + e.getType().toString().toLowerCase() + ".");
 						}
 				  }
 				

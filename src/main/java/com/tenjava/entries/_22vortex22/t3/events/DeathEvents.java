@@ -19,7 +19,11 @@ public class DeathEvents implements Listener
 		plugin = instance;
 	}
 	
-	
+	/**
+	 * Lightning on death. That's sick right?
+	 * @param e
+	 */
+
 	@EventHandler
 	public void onDeath(final PlayerDeathEvent e)
 	{

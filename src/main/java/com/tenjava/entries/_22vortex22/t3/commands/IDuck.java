@@ -22,14 +22,14 @@ public class IDuck implements Listener
 	}
 	
 	/**
-	 * 
-	 * Easter Egg again!
+	 * This easter egg was made for IDucks!
+	 * @param e
 	 */
 	
 	@EventHandler
 	public void PlayerPreDuckCommandEvent(PlayerCommandPreprocessEvent e)
 	{	
-		if(e.getMessage().equalsIgnoreCase("/iduck"))
+		if(e.getMessage().equalsIgnoreCase("/iducks"))
 		{
 			e.setCancelled(true);
 			Player p = e.getPlayer();
@@ -39,7 +39,7 @@ public class IDuck implements Listener
 			   {	 
 				Chicken chicken = world.spawn(p.getLocation(), Chicken.class);
 				chicken.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0));
-				chicken.setCustomName(ChatColor.GOLD + "IDuck");
+				chicken.setCustomName(ChatColor.GOLD + "IDucks");
 			   }
 		}
 	}

@@ -58,6 +58,11 @@ public class EntityRain implements Listener
 	
 	public final List<EntityType> types = Arrays.asList(ET);
 	
+	
+	/**
+	 * The event that handles entity storms.
+	 * @param event
+	 */
 	@EventHandler
 	public void onWand(PlayerInteractEntityEvent event)
 	{
@@ -68,7 +73,7 @@ public class EntityRain implements Listener
 		  {
 			if(types.contains(e.getType()))
 			{
-				event.getPlayer().sendMessage(ChatColor.GOLD + "You have summonded a storm of " + e.getType().toString().toLowerCase() + "s.");
+				event.getPlayer().sendMessage(ChatColor.GOLD + "You have summoned a storm of " + e.getType().toString().toLowerCase() + "s.");
 				event.setCancelled(true);
 				e.remove();
 				Location loc = e.getLocation().add(0, 100, 0);
@@ -80,7 +85,7 @@ public class EntityRain implements Listener
 				  for (double i = 0.0; i < 360.0; i += (360f / radius))
 				  {
 					   double angle = Math.toRadians(i);
-		                x = loc.getX() + (Math.cos(angle) * radius);
+		                x = loc.getX() - (Math.cos(angle) * radius);
 		                z = loc.getZ() + (Math.sin(angle) * radius);
 		                Location location = new Location(loc.getWorld(), x, y, z);
 		                location.getWorld().spawnEntity(location, e.getType());
