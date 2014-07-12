@@ -23,7 +23,7 @@ public class EntityRain implements Listener
 	
 	/**
 	 * 
-	 * The class the causes creature storms.
+	 * The class the causes creature storms when activated by the magic wand.
 	 */
 	
 	public final EntityType[] ET = 
