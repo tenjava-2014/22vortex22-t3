@@ -31,5 +31,62 @@ Usage
 1. Install plugin
 2. Do things with it
 
-<!-- Hi, 22vortex22! This is the default README for every ten.java submission. -->
-<!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
+---------------------------------------
+
+Features
+--------
+
+So my plugin has some crazy stuff in it. I'll try my best to explain.
+
+
+Cooler Explosions!
+------------------
+
+![AltText](http://i.gyazo.com/255b1a00a6874a74540706e9122fc795.png)
+
+
+Magic Wand (Extremely Powerful)
+-------------------------------
+
+You can get the wand by doing /wand.
+
+
+![AltText](http://i.gyazo.com/a955404f31552c68219f86550d12cd2c.png)
+
+(Sorry, images might be small.)
+
+You can summon storms of mobs by right clicking them.
+
+
+![AltText](http://i.gyazo.com/58a469c68f3d828d0a4b809911a6a4b7.png)
+
+You can use the force on mobs why left clicking them. This will knock them back.
+
+
+Cool Effects On Death And Respawn
+---------------------------------
+
+When you die, lightning strikes where you die. (It does no damage)
+
+When you respawn, cool effects will spawn!
+
+
+Tons of Easter Eggs
+-------------------
+
+Looking past this point will spoil the egg hunt for you.
+-----------------------------------------------------
+
+ /alexmack
+ /doge
+ /easterbunny or /eb
+ /iduck
+ /jkcclemens
+ /lol768
+ /wand
+
+
+
+
+
+

@@ -35,10 +35,11 @@ public class EasterBunny implements Listener
 			Skeleton skeleton = p.getWorld().spawn(p.getLocation(), Skeleton.class);
 			Skeleton skele = p.getWorld().spawn(p.getLocation(), Skeleton.class);
 			skele.setCustomName("Dinnerbone");
+			skeleton.setCustomName(ChatColor.GOLD + "EasterBunny");
 			skeleton.setPassenger(skele);
 			skele.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 100));
 			skeleton.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 100));
-			p.sendMessage(ChatColor.GOLD + "You have spawned a Easter Bunny. ");
+			p.sendMessage(ChatColor.GOLD + "You have spawned a Easter Bunny. He might not be friendly.");
 		}
 	}
 	
