@@ -23,9 +23,9 @@ public class RespawnEvents implements Listener
 	
 	final Effect[] RespawnEffects = new Effect[]
 	{
-			Effect.SMOKE,
-			Effect.MOBSPAWNER_FLAMES,
-			Effect.POTION_BREAK,			 			
+		Effect.SMOKE,
+		Effect.MOBSPAWNER_FLAMES,
+		Effect.POTION_BREAK,			 			
 	};
 
 	/**
@@ -51,7 +51,6 @@ public class RespawnEvents implements Listener
 			  }
 
 			}.runTaskLater(plugin, 10);
-		
 			
 	}
 		
