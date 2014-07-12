@@ -9,6 +9,7 @@ import com.tenjava.entries._22vortex22.t3.commands.IDuck;
 import com.tenjava.entries._22vortex22.t3.commands.Jkcclemens;
 import com.tenjava.entries._22vortex22.t3.events.CraterCreator;
 import com.tenjava.entries._22vortex22.t3.events.DeathEvents;
+import com.tenjava.entries._22vortex22.t3.events.EntityForcePush;
 import com.tenjava.entries._22vortex22.t3.events.EntityRain;
 import com.tenjava.entries._22vortex22.t3.events.RespawnEvents;
 
@@ -49,6 +50,7 @@ public class TenJava extends JavaPlugin implements Listener
 		pm.registerEvents(new IDuck(this), this);
 		pm.registerEvents(new Jkcclemens(this), this);
 		pm.registerEvents(new EntityRain(this), this);
+		pm.registerEvents(new EntityForcePush(this), this);
 	}
 	
 	public static TenJava getPlugin()
