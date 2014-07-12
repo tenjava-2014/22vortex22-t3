@@ -1,4 +1,4 @@
-package com.tenjava.entries.p22vortex22.t3;
+package com.tenjava.entries._22vortex22.t3;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
