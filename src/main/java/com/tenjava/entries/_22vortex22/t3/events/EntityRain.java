@@ -1,19 +1,19 @@
 package com.tenjava.entries._22vortex22.t3.events;
 
 import java.util.Arrays;
-import java.util.Random;
+import java.util.List;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import com.tenjava.entries._22vortex22.t3.TenJava;
 
-public class EntityRain
+public class EntityRain implements Listener
 {
 	public TenJava plugin;
 	public EntityRain(TenJava instance)
@@ -53,22 +53,39 @@ public class EntityRain
 		EntityType.SILVERFISH
 	};
 	
+	public final List<EntityType> types = Arrays.asList(ET);
+	
 	@EventHandler
 	public void onWand(PlayerInteractEntityEvent event)
 	{
 		Entity e = event.getRightClicked();
-		if(event.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.BOLD + "" + ChatColor.GOLD + "Magic Wand"))
-		{
-			if(Arrays.asList(ET).contains(e.getType()))
+		if(!(event.getPlayer().getItemInHand() == null) || (event.getPlayer().getItemInHand().hasItemMeta()))
+		{		
+		  if(ChatColor.stripColor(event.getPlayer().getItemInHand().getItemMeta().getDisplayName()).equalsIgnoreCase("Magic Wand"))
+		  {
+			event.getPlayer().sendMessage(ChatColor.GOLD + "You have summonded a storm of " + e.getType().toString().toLowerCase() + "s.");
+			if(types.contains(e.getType()))
 			{
 				event.setCancelled(true);
 				e.remove();
 				Location loc = e.getLocation().add(0, 100, 0);
-				for (int i = 0; i < 50; i++)
-				{	
-				loc.getWorld().spawnEntity(loc, e.getType());
+				double x;
+				int y = loc.getBlockY();
+				double z;
+				for(double radius = 1; radius <= 50; radius++)
+				{
+				  for (double i = 0.0; i < 360.0; i += (360f / radius))
+				  {
+					   double angle = Math.toRadians(i);
+		                x = loc.getX() + (Math.cos(angle) * 50);
+		                z = loc.getZ() + (Math.sin(angle) * 50);
+		                Location location = new Location(loc.getWorld(), x, y, z);
+		                location.getWorld().spawnEntity(location, e.getType());
+		                
+		          }
 				}
 			}
+		  }
 		}	
 	}
 	

@@ -5,8 +5,6 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.util.Vector;
 
@@ -34,9 +32,10 @@ public class CraterCreator implements Listener
         }
     }
 
-    public void blockfly(Block block)
+    @SuppressWarnings("deprecation")
+	public void blockfly(Block block)
     {
-        if(block == null || block.equals(Material.TNT)) return;
+        if(block == null || block.getType().equals(Material.TNT)) return;
         
         FallingBlock fb = block.getWorld().spawnFallingBlock(block.getLocation(), block.getType(), block.getData());
         block.setType(Material.AIR);

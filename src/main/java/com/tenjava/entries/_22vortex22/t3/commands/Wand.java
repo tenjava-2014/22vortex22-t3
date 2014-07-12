@@ -34,7 +34,7 @@ public class Wand implements CommandExecutor
 			//Meta and details of the wand.
 			ItemStack Wand = new ItemStack(Material.STICK);
 			ItemMeta wmeta = Wand.getItemMeta();
-			wmeta.setDisplayName(ChatColor.BOLD + "" + ChatColor.GOLD + "Magic Wand");
+			wmeta.setDisplayName(ChatColor.GOLD + "Magic Wand");
 			ArrayList<String> WandLore = new ArrayList<String>();
 			WandLore.add(ChatColor.RED + "Use this to use special abilities,");
 			WandLore.add(ChatColor.RED + "If you change its name or alter");
