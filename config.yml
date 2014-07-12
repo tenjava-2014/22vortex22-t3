@@ -1,0 +1,5 @@
+options:
+  deathevents: true
+  deatheffectQuantity: 3
+  respawnevents: true
+  respawneffectquantity: 10

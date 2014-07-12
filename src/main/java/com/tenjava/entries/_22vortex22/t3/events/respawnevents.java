@@ -35,21 +35,48 @@ public class RespawnEvents implements Listener
 	@EventHandler
 	public void onRespawn(final PlayerRespawnEvent e)
 	{
+<<<<<<< HEAD
+=======
+		//if(plugin.getConfig().getBoolean("options.respawnevents"))
+		//{
+		Random random = new Random();
+		final Effect effect = RespawnEffects[random.nextInt(RespawnEffects.length)];
+		Player p = e.getPlayer();
+		final Location loc = p.getLocation();
+		final World world = p.getWorld();
+		p.sendMessage("Respawn listener is working");
+		if(p.hasPermission("VortexEvents.Respawn"))
+		{
+>>>>>>> 2cba030c3a5283c7d99c7720645c290fb48168fc
 			new BukkitRunnable()
 			{
 			  public void run()
 			  {
+<<<<<<< HEAD
 				  Player p = e.getPlayer();
 				  World world = p.getWorld();
 				  Random random = new Random();
 				  Effect effect = RespawnEffects[random.nextInt(RespawnEffects.length)];
 				  Location loc = p.getLocation();
 				   for (int i = 0; i < 20; i++)
+=======
+				  
+				  //plugin.getConfig().getInt("options.respawneffectquantity")
+				   for (int i = 0; i < 5; i++)
+>>>>>>> 2cba030c3a5283c7d99c7720645c290fb48168fc
 				   {	 
 				   world.playEffect(loc, effect, 1);	
 				   }
 			  }
+<<<<<<< HEAD
 			}.runTaskLater(plugin, 10);
 		
 	}
+=======
+			}.runTaskLater(plugin, 5);
+		}
+		//}
+	}
+	
+>>>>>>> 2cba030c3a5283c7d99c7720645c290fb48168fc
 }
