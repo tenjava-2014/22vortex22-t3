@@ -46,7 +46,10 @@ public class EntityRain implements Listener
 		EntityType.PIG,
 		EntityType.WITCH,
 		EntityType.PIG_ZOMBIE,
+		EntityType.SKELETON,
+		EntityType.SPIDER,
 		EntityType.SHEEP,
+		EntityType.SLIME,
 		EntityType.WOLF,
 		EntityType.ZOMBIE,
 		EntityType.SNOWMAN,
@@ -63,28 +66,29 @@ public class EntityRain implements Listener
 		{		
 		  if(ChatColor.stripColor(event.getPlayer().getItemInHand().getItemMeta().getDisplayName()).equalsIgnoreCase("Magic Wand"))
 		  {
-			event.getPlayer().sendMessage(ChatColor.GOLD + "You have summonded a storm of " + e.getType().toString().toLowerCase() + "s.");
 			if(types.contains(e.getType()))
 			{
+				event.getPlayer().sendMessage(ChatColor.GOLD + "You have summonded a storm of " + e.getType().toString().toLowerCase() + "s.");
 				event.setCancelled(true);
 				e.remove();
 				Location loc = e.getLocation().add(0, 100, 0);
 				double x;
 				int y = loc.getBlockY();
 				double z;
-				for(double radius = 1; radius <= 50; radius++)
+				for(double radius = 1; radius <= 20; radius++)
 				{
 				  for (double i = 0.0; i < 360.0; i += (360f / radius))
 				  {
 					   double angle = Math.toRadians(i);
-		                x = loc.getX() + (Math.cos(angle) * 50);
-		                z = loc.getZ() + (Math.sin(angle) * 50);
+		                x = loc.getX() + (Math.cos(angle) * radius);
+		                z = loc.getZ() + (Math.sin(angle) * radius);
 		                Location location = new Location(loc.getWorld(), x, y, z);
 		                location.getWorld().spawnEntity(location, e.getType());
 		                
 		          }
 				}
 			}
+			else event.getPlayer().sendMessage(ChatColor.RED + "You can't summon a storm of that entity.");
 		  }
 		}	
 	}
