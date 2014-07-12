@@ -24,8 +24,6 @@ public class DeathEvents implements Listener
 	public void onDeath(final PlayerDeathEvent e)
 	{
 		final Player p = e.getEntity();
-		 if(p.hasPermission("VortexEvents.Death"))
-		 {
 			new BukkitRunnable()
 			{
 			  public void run()
@@ -39,8 +37,6 @@ public class DeathEvents implements Listener
 				   }
 			  }
 			}.runTaskLater(plugin, 5);
-			
-		 }
 		
 	}
 	

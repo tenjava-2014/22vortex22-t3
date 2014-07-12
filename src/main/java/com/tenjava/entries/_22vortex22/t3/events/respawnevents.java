@@ -35,9 +35,7 @@ public class RespawnEvents implements Listener
 	@EventHandler
 	public void onRespawn(final PlayerRespawnEvent e)
 	{
-		final Player p = e.getPlayer();
-		if(p.hasPermission("VortexEvents.Respawn"))
-		{
+	final Player p = e.getPlayer();
 			new BukkitRunnable()
 			{
 			  public void run()
@@ -54,7 +52,6 @@ public class RespawnEvents implements Listener
 
 			}.runTaskLater(plugin, 10);
 		
-		}
 			
 	}
 		
