@@ -3,6 +3,7 @@ package com.tenjava.entries._22vortex22.t3.events;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -61,20 +62,28 @@ public class EntityForcePush
 	@EventHandler
 	public void onWandHit(EntityDamageByEntityEvent event)
 	{
-		Entity e = event.getEntity();	
-		if(types.contains(e))
-		{
-			e.setVelocity(event.getDamager().getLocation().getDirection().multiply(2.0).setY(1));
-		}
-		else if(!(types.contains(e)));
-		{
-		 if(event.getDamager().getType().equals(EntityType.PLAYER))
+		Bukkit.getServer().broadcastMessage("test");
+		Entity e = event.getEntity();
+		if(event.getDamager().getType().equals(EntityType.PLAYER))
 		 {
-			Player p = (Player) event.getDamager();
-			p.sendMessage(ChatColor.RED + "You can't use the force of the wand on this entity.");
+			final Player p = (Player) event.getDamager();
+			if(!(p.getItemInHand() == null) || (p.getItemInHand().hasItemMeta()))
+			{
+				  if(ChatColor.stripColor(p.getItemInHand().getItemMeta().getDisplayName()).equalsIgnoreCase("Magic Wand"))
+				  {
+					  if(types.contains(e.getType()))
+						{
+						  e.setVelocity(event.getDamager().getLocation().getDirection().multiply(2.0).setY(1));
+						  p.sendMessage(ChatColor.GOLD + "You used the force on the " + e.getType() + ".");
+						}
+					  else if(!(types.contains(e.getType())));
+						{
+						 p.sendMessage(ChatColor.RED + "You can't use the force on a " + e.getType() + ".");
+						}
+				  }
+				
+			}
 		 }
-		}
-		
 		
 	}
 		
