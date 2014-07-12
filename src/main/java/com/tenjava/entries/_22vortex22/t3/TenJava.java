@@ -5,6 +5,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.tenjava.entries._22vortex22.t3.commands.Alexmack;
 import com.tenjava.entries._22vortex22.t3.commands.Doge;
+import com.tenjava.entries._22vortex22.t3.commands.IDuck;
 import com.tenjava.entries._22vortex22.t3.events.CraterCreator;
 import com.tenjava.entries._22vortex22.t3.events.DeathEvents;
 import com.tenjava.entries._22vortex22.t3.events.RespawnEvents;
@@ -43,6 +44,7 @@ public class TenJava extends JavaPlugin implements Listener
 		pm.registerEvents(new DeathEvents(this), this);
 		pm.registerEvents(new Alexmack(this), this);
 		pm.registerEvents(new CraterCreator(this), this);
+		pm.registerEvents(new IDuck(this), this);
 
 	}
 	

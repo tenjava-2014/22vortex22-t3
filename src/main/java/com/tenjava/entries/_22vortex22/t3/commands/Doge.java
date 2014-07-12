@@ -56,7 +56,7 @@ public class Doge implements Listener
 	public void PlayerPreDogeCommandEvent(PlayerCommandPreprocessEvent e)
 	{
 		
-		if(e.getMessage().equals("/doge"))
+		if(e.getMessage().equalsIgnoreCase("/doge"))
 		{
 			e.setCancelled(true);
 			Player p = e.getPlayer();

@@ -41,15 +41,11 @@ public class CraterCreator implements Listener
         FallingBlock fb = block.getWorld().spawnFallingBlock(block.getLocation(), block.getType(), block.getData());
         block.setType(Material.AIR);
         
-        float x = (float) -1 + (float) (Math.random() * ((1 - -1) + 1));
-        float y = 1;
-        float z = (float) -0.3 + (float)(Math.random() * ((0.3 - -0.3) + 1));
+        float x = (float) -1.1 + (float) (Math.random() * ((1.1 - -1.1) + 1));
+        double y = .8;
+        float z = (float) -0.2 + (float)(Math.random() * ((0.2 - -0.2) + 1));
         
         fb.setVelocity(new Vector(x, y, z));
     }
-	
-	
-	
-	
 	
 }
